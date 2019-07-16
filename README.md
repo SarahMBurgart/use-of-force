@@ -4,4 +4,4 @@ A predictive model for probabilities of level of force when the Seattle Police r
 
 Model is made using Python and SQL on AWS servers, based on voluntary reporting data from the Seattle Police department and an online database of Police Reports.
 
-** currently working on creating an interactive website and connecting an interactive beats map **
+Currently doing:  working on creating an interactive website and connecting an interactive beats map 
