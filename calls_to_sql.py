@@ -6,7 +6,7 @@ import pandas as pd
 calls = pd.read_csv("data/Call_Data.csv")
 
 def callstime(df, col_arrive):
-    yearmonthday = df[col_arrive].astype(str).str.split(" ")
+    yearmonthday = df[col_arrive].astype(str).str.split()
     df["year"] = yearmonthday.apply(lambda x: x[2])
     df["day"] = yearmonthday.apply(lambda x: x[1])
     month_dict = {"Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6, "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec":12}
@@ -38,7 +38,7 @@ indt
 calls17.drop(indt, axis=0, inplace=True)
 
 #remove repetitive columns
-calls_tosql = calls17.drop(columns =["year","day", "month", "time", "Precinct", "Sector", "Arrived Time"])
+calls_tosql = calls17.drop(columns =["day", "month", "time", "Precinct", "Sector", "Arrived Time"])
 calls_tosql.set_index("epoch_calls", inplace=True)
 
 # move calls to sqlite table - DONT REPEAT
