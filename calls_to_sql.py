@@ -1,5 +1,7 @@
 # code to clean up calls.csv and move it to a SQL table
-
+import sqlite3
+from sqlalchemy import create_engine
+engine = create_engine('sqlite://', echo=False)
 import numpy as np
 import pandas as pd
 
