@@ -13,16 +13,22 @@ app = Flask(__name__)
 
 def get_model():
      # add unpickled model
-    with open('logr_model.pkl', 'rb') as modelZ:
+    with open('lrbimod.pkl', 'rb') as modelZ:
         model = pickle.load(modelZ)
+    with open('gbc1234.pkl', 'rb') as modelW:
+        model1234 = pickle.load(modelW)
+    with open ('logr_cols', 'rb') as lc:
+        logr_cols= pickle.load(lc)
     with open ('col_lst', 'rb') as fp:
         col_lst= pickle.load(fp)
+    with open('sgr_df.pkl', 'rb') as sgr:
+        sgr_df = pickle.load(sgr)
         
     #print("hi")
-    return model, col_lst
+    return model, model1234, logr_cols, col_lst, sgr_df
 
 
-model, col_lst = get_model()
+model, model1234, logr_cols, col_lst, sgr_df = get_model()
 
 @app.route('/', methods=['GET'])
 def home():
@@ -54,24 +60,37 @@ def _probas(address, ICT, race, gender, dayofweek, month, hour):
     coshour, sinhour = _get_hours(hour)
     
     
-    d = pd.DataFrame(np.zeros((1,169), dtype=np.float64), columns=col_lst)
+    d = pd.DataFrame(np.zeros((1,161), dtype=np.float64), columns=logr_cols)
     d.loc[0,f"P_{precinct}"] = 1
     d.loc[0,f"S_{sector}"] = 1
     d.loc[0,f"B_{beat}"] = 1
-    d.loc[0,f"SG_{gender}"] = 1
-    d.loc[0,f"SR_{race}"] = 1
+
     d.loc[0,f"ICT_{ICT}"] = 1
     d.loc[0,f"dow_{dayofweek}"] = 1
     d.loc[0,'CT_911'] = 1
     d.loc[0,f"month_{month}"] = 1
     d.loc[0, "sin_hour2"] = sinhour
     d.loc[0, "cos_hour2"] = coshour
-    #print(f"this is d:{d[["precinct"]]}")
-    print(d.loc[0, "SG_Female"])
-    #print(type(d.loc[0,"SG_Female"]), d["sin_hour2"], type(d.loc[0,"sin_hour2"]))
-    p = model.predict_proba(d)
-    print(p)
-    return p[0]
+
+    pp_1 = model.predict_proba(d)
+
+    
+    d2 = pd.concat([d, sgr_df], axis=1, sort=False)
+    d2.loc[0,f"SG_{gender}"] = 1
+    d2.loc[0,f"SR_{race}"] = 1
+
+    pp_2 = model1234.predict_proba(d2)
+    print(pp_1, pp_2)
+    p_list = []
+
+    p_list.append(pp_1[0][0])
+    p_list.append(pp_1[0][1]*pp_2[0][0])
+    p_list.append(pp_1[0][1]*pp_2[0][1])
+    p_list.append(pp_1[0][1]*pp_2[0][2])
+    p_list.append(pp_1[0][1]*pp_2[0][3])
+
+    print(pp_1, pp_2, p_list)
+    return p_list
 
 def _get_beat(address):
     beat = findbeat(address)

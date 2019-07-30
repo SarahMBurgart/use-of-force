@@ -31,7 +31,7 @@ let send_inputs_json = function(coefficients) {
 };
 
 let display_solutions = function(solutions) {
-    $("span#solution").html("<em>no force:</em> " + solutions.p0.toFixed(4) + " <br>"  + "Level 1: " + solutions.p1.toFixed(4)  + " <br> " + "Level 2: " + solutions.p2.toFixed(4)  + " <br>" + "Level 3: " + solutions.p3.toFixed(4)  + " <br> " + "Level 3 - OIS: " + solutions.p4.toFixed(4) )
+    $("span#solution").html("<em>no force:</em> " + solutions.p0.toFixed(4) + " <br>"  + "<em>Level 1: </em>" + solutions.p1.toFixed(4)  + " <br> " + "<em>Level 2:</em> " + solutions.p2.toFixed(4)  + " <br>" + "<em>Level 3:</em> " + solutions.p3.toFixed(4)  + " <br> " + "<em>Level 3 - OIS: </em>" + solutions.p4.toFixed(4) )
 };
 console.log("hello")
         $(document).ready(function() {
