@@ -4,17 +4,20 @@
     <title>Use of Force &mdash; Website by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}">  
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}">  
+    </script>
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
     <link rel="stylesheet" href="static/fonts/icomoon/style.css">
-
+    <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/jquery-ui.css">
     <link rel="stylesheet" href="static/css/owl.carousel.min.css">
     <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
-
+ 
     <link rel="stylesheet" href="static/css/jquery.fancybox.min.css">
 
     <!-- <link rel="stylesheet" href="static/css/bootstrap-datepicker.css"> -->
@@ -99,16 +102,121 @@
         
         <img src="static/images/downtown.jpg" alt="Image" class="img-fluid">
         <div class="img-box">
-          <span class="sub-title">The Process of Analysis</span>
+            <p><b>Predicted Probabilities of Levels of Force</b></p>
+        
+          <p class="mb-4">Please enter your street address, select the race and presented gender of the subject involved, and choose the category of incident being reported.</p>
+              <label for="Address"><p>What is the Address where the Incident is Occuring?</p></label>
+              <input type="text" class="form-control" id="Address" placeholder="111 S. Jackson Street">
+              <label for="ICT"></label><p>Select what is Happening</p></label>
+                        <select class="form-control" id="ICT">
+                            <option>Aggressive Panhandling</option>
+                            <option>Alarm</option>
+                            <option>Animal - Dangerous / Bite</option>
+                            <option>Assault</option>
+                            <option>Auto Recovery</option>
+                            <option>Behavioral / Emotional Crisis</option>
+                            <option>Casualty</option>
+                            <option>Check for Person Down</option>
+                            <option>Child Abuse</option>
+                            <option>DUI - Driving While Under the Influence</option>
+                            <option>Damaged Property</option>
+                            <option>Deadly Weapon - No Assault</option>
+                            <option>Disturbance</option>
+                            <option>Domestic Violence</option>
+                            <option>DUI - Driving While Under the Influence</option>
+                            <option>Explosion / Arson</option>
+                            <option>Follow up</option>
+                            <option>Fraud</option>
+                            <option>Gambling</option>
+                            <option>Harassment</option>
+                            <option>Hazard - immediate threat</option>
+                            <option>Illegal Dumping</option>
+                            <option>Injuries from Industrial Accidents</option>
+                            <option>Lewd Conduct</option>
+                            <option>Liquor Violations</option>
+                            <option>Missing Person</option>
+                            <option>Motor Vehicle Collision</option>
+                            <option>Moving Violation</option>
+                            <option>Narcotics</option>
+                            <option>Nuisance</option>
+                            <option>Overdose - Drug Related Casualty</option>
+                            <option>Parking Violation</option>
+                            <option>Pickup Person</option>
+                            <option>Property lost or found</option>
+                            <option>Prostitution</option>
+                            <option>Rape</option>
+                            <option>Request for Detox'</option>
+                            <option>Request to Watch / Ensure Peace</option>
+                            <option>Road Rage</option>
+                            <option>Robbery</option>
+                            <option>Shots heard</option>
+                            <option>Sleeper Aboard Public Transit</option>
+                            <option>Suicidal person or attempts</option>  
+                            <option>Suspicious person, vehicle, incident</option>
+                            <option>Threats</option>
+                            <option>Trespass</option>
+                            <option>Violation of Court Order (Not Domestic Violence)</option>  
+                            <option>Welfare Check</option>
+                        </select>
+                        <label for="Race"><p>Select the Race of the Subject Involved</p></label>
+                            <select class="form-control" id="Race">
+                                <option>American Indian/Alaska Native</option>
+                                <option>Asian</option>
+                                <option>Black or African American</option>
+                                <option>Hispanic or Latino</option>
+                                <option>Native Hawaiian / Other Pacific Islander</option>
+                                <option>White</option>
+                            </select>
+                            <label for="Gender">Select the Gender of the Subject Involved (presents as)</label>
+                            <select class="form-control" id="Gender">
+                                <option>Female</option>
+                                <option>Male</option>
+                            </select>
+                           
+                              <br>
+                              <!-- Trigger the modal with a button -->
+                              <button type="button" class="login100-form-btn"  data-toggle="modal" data-target="#myModal" id="solve">Submit</button>
+                    
+                              <!-- Modal -->
+                              <div id="myModal" class="modal fade" role="dialog">
+                                  <div class= "modal-dialog">
           
-          <h2>Reiterative Exploration, Analysis, and Modeling</h2>
-          <p>Click the button to go to a walk through of the process of creating the model and visualizations, and what I would like to do next.</p>
-          <p><a href="#" class="btn btn-outline-dark">The Process</a></p>
-        </div>
-      </div>  
-    </div>
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              
+                                              <h4 class="modal-title">Predicted Probabilities:</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              
+                                              <p>  DISCLAIMER: 
+                                                  <br>
+                                                  <br><h1>You entered: A {Race} {Gender} appearing person, involed with {ICT} at {Address}</h1>
+                                                  <br>
+                                                  <br> Level 1: transitory pain, pointing a firearm at someone<br>
+                                                  <br> Level 2: physical injury less than substanial bodily injury, use of OC spray, impact weapon<br>
+                                                  <br> Level 3: great bodily harm, substantial bodily harm, loss of consciousness, or death<br>
+                                                  <br> Level 3-OIS: Level 3, specifically involving an officer involved shooting<br>
+                                                <div>
+                                              <span id="solution">  </span></div>   </p>
+                                             
+                                          
+                                    
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          </div>
+                                          </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      </div>
+                                          
 
-    
+
+    <br>
+    <br>
+
    
 
 
