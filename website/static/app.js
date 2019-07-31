@@ -1,5 +1,6 @@
 
 
+
 let get_input = function() {
     let Address = $("input#Address").val()
     let ICT = $("select#ICT").val()
@@ -30,8 +31,9 @@ let send_inputs_json = function(coefficients) {
 });
 };
 
-let display_solutions = function(solutions) {
-    $("span#solution").html("<em>no force:</em> " + solutions.p0.toFixed(4) + " <br>"  + "<em>Level 1: </em>" + solutions.p1.toFixed(4)  + " <br> " + "<em>Level 2:</em> " + solutions.p2.toFixed(4)  + " <br>" + "<em>Level 3:</em> " + solutions.p3.toFixed(4)  + " <br> " + "<em>Level 3 - OIS: </em>" + solutions.p4.toFixed(4) )
+let display_solutions = function(solutions){
+  
+    $("span#solution").html("<em>Level 0:</em> " + solutions.p0.toFixed(4) + " <em>Level 1: </em> " +  solutions.p1.toFixed(4) + " <br><em>Level 2:</em> " + solutions.p2.toFixed(4)  + " <br>" + "<em>Level 3:</em> " + solutions.p3.toFixed(4)  + " <br> " + "<em>Level 3 - OIS: </em>" + solutions.p4.toFixed(4) )
 };
 console.log("hello")
         $(document).ready(function() {
