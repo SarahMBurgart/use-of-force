@@ -114,7 +114,7 @@
 					
 					<div class="form-group">
                         <label for="Address">What is the Address where the Incident is Occuring?</label>
-						<input type="text" class="form-control" id="Address" placeholder="please enter street address">
+						<input type="text" class="form-control" id="Address" value="111 S Jackson Street">
 					</div>
                     <div class="form-group">
                         <label for="ICT">Select what is Happening</label>
@@ -188,58 +188,75 @@
                                 <option>Male</option>
                             </select>
                         </div>
-					
-                  <!-- Trigger the modal with a button -->
-                  <button type="button" class="login100-form-btn"  data-toggle="modal" data-target="#myModal" id="solve">Submit</button>
-                    
-                  <!-- Modal -->
-                  <div id="myModal" class="modal fade" role="dialog">
-                      <div class= "modal-dialog">
+                  <button type="button" class="login100-form-btn"    id="solve">Submit</button>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div class="modal-body">
 
-                          <!-- Modal content-->
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  
-                                  <h4 class="modal-title">Predicted Probabilities:</h4>
-                              </div>
-                              <div class="modal-body">
-                                  
-                                  <p>  DISCLAIMER: 
-                                      <br>
-                                      <br><h1>data</h1>
-                                      <br>
-                                      <br> Level 1: transitory pain, pointing a firearm at someone<br>
-                                      <br> Level 2: physical injury less than substanial bodily injury, use of OC spray, impact weapon<br>
-                                      <br> Level 3: great bodily harm, substantial bodily harm, loss of consciousness, or death<br>
-                                      <br> Level 3-OIS: Level 3, specifically involving an officer involved shooting<br>
-                                    <div>
-                                  <span id="solution">  </span></div>   </p>
-                                 
-                              
-                        
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-				
-
+                                              <div>
+                                                    <span id="solution">  </span>
+                                                </div> 
+                                        </div>
+                             
+           
+            </form>
+<!-- 
 					<div class="w-full text-center p-t-27 p-b-239">
 						
 
 						<a href="#" class="txt2">
 							Need help?
 						</a>
-                    </div>
+                    </div> -->
                     
-              
+             
+                <head>
+                            <style>
+                            div.background {
+                              background: url('static/images/library_abstract.jpg') repeat;
+                              border: 1px solid black;
+                              background-color: #ffffff00;
+                              
+                            }
+                             
+                            div.transbox {
+                              margin: 60px;
+                              background-color: #ffffff67;
+                              border: 1px solid black;
+                              color: #000000;
+                              
+                            }
+                             
+                            div.transbox p {
+                              margin: 5%;
+                              font-weight: bold;
+                              color: #00000000;
+                            }
+                            </style>
+                            </head>
+                            <body>
+                             
+                            <div class="background">
+                              <div class="transbox">
+                                <p>
+                                    <h2> Levels of Force: </h2>
+                                    <br>
+                                    <strong>Level 1:</strong><br>transitory pain, pointing a firearm at someone<br>
+                                    <br><strong>Level 2:</strong><br> physical injury less than substantial bodily injury<br>
+                                    <br><strong>Level 3:</strong><br> substantial bodily harm, loss of consciousness, or death<br>
+                                    <br><strong>Level 4:</strong><br> Officer Involved Shooting, level 3 + OIS <br>
+                                  </p>
+                              </div>
+                            </div>
+                             
+                            <!-- <div class="relative">
+                                    <img src="http://lorempixel.com/600/600" alt="">
+                                    <p class="absolute-text">Hey I am text on an Image. <a href="https://www.quora.com/How-do-I-write-text-over-image-in-HTML/answer/Sahil-Popli-1">Back to Quora Answer</a> </p>
+                                  </div> -->
 
 					
-				</form>
+				
 
 				<div class="login100-more" style="background-image: url('static/images/library_abstract.jpg');"></div>
 			</div>

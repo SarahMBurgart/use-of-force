@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+cod<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Use of Force &mdash; Website by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}">  
+    </script>
+  
+
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}">  
+    </script>
+
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
     <link rel="stylesheet" href="static/fonts/icomoon/style.css">
@@ -52,7 +59,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo">Pointer<span class="text-primary">.</span> </h1>
+            <h1 class="mb-0 site-logo"><span class="text-primary"></span> </h1>
           </div>
 
           <div class="col-12 col-md-10 d-none d-xl-block">
@@ -92,26 +99,6 @@
         </div>
       </div>
     </div>  
-
-    
-    <div class="site-section cta-big-image" id="about-section">
-      <div class="container">
-        
-        <img src="static/images/downtown.jpg" alt="Image" class="img-fluid">
-        <div class="img-box">
-          <span class="sub-title">The Process of Analysis</span>
-          
-          <h2>Reiterative Exploration, Analysis, and Modeling</h2>
-          <p>Click the button to go to a walk through of the process of creating the model and visualizations, and what I would like to do next.</p>
-          <p><a href="#" class="btn btn-outline-dark">The Process</a></p>
-        </div>
-      </div>  
-    </div>
-
-    
-   
-
-
     <section class="site-section">
       <div class="container">
         
@@ -265,44 +252,24 @@
         <div class="row">
           <div class="col-md-8">
             <div class="row">
-              <div class="col-md-5">
-                <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-              </div>
-              <div class="col-md-3 ml-auto">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-              
+              <div class="col-md-10">
+                <h2 class="footer-heading mb-4">About Me</h2>
+                <p>My background is in science, teaching, and communication. <br> <br>Current fascination: There is a *somewhat* surprising overlap between understanding the interplay of relationships of data and field system theory in Marine Science. Ditto with adult learning theory (andragogy) and child learning (pedagogy) and statistics (both Bayesian and Frequentist).</p>
+              </div> 
             </div>
           </div>
           <div class="col-md-4">
             <div class="mb-4">
-              <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
-            <form action="#" method="post" class="footer-subscribe">
+              <h2 class="footer-heading mb-4">Let's Connect - Enter Email Here:</h2>
+            <div class="footer-subscribe">
               <div class="input-group mb-3">
-                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                <input type="email" id="email" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-primary text-black" type="button" id="button-addon2">Send</button>
+                  <button class="btn btn-primary text-black" type="button" id="button2">Email Me!</button>
                 </div>
               </div>
-            </form>  
+            </div>  
             </div>
-            
-            <div class="">
-              <h2 class="footer-heading mb-4">Follow Us</h2>
-                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
-
-
           </div>
         </div>
         <div class="row pt-5 mt-5 text-center">
