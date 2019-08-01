@@ -36,7 +36,7 @@ let send_inputs_json = function(coefficients) {
 
 let display_solutions = function(solutions){
   
-    $("span#solution").html("<h4 >Predicted Probabilities:</h4><em>No Force: </em> " + solutions.p0.toFixed(4) + "<br> <em>Level 1: </em> " +  solutions.p1.toFixed(4) + " <br><em>Level 2:</em> " + solutions.p2.toFixed(4)  + " <br>" + "<em>Level 3:</em> " + solutions.p3.toFixed(4)  + " <br> " + "<em>Level 4: </em>" + solutions.p4.toFixed(4) )
+    $("span#solution").html("<h4 >Predicted Probabilities:</h4><strong>No Force: </strong> " + solutions.p0.toFixed(6) + "   |   <strong>average:</strong> 0.994121" + "<br> <strong>Level 1: </strong> " +  solutions.p1.toFixed(6) + "   |   <strong>average:</strong> 0.004418" +" <br><strong>Level 2:</strong> " + solutions.p2.toFixed(6)  + "   |   <strong>average:</strong> 0.001415" + " <br>" + "<strong>Level 3:</strong> " + solutions.p3.toFixed(6)  + "   |   <strong>average:</strong> 0.000036" +" <br> " + "<strong>Level 4: </strong>" + solutions.p4.toFixed(6) +"   |   <strong>average:</strong> 0.000011"  )
 };
 console.log("hello")
         $(document).ready(function() {
