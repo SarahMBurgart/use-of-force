@@ -6,6 +6,8 @@ from urllib.request import urlopen
 from urllib.parse import quote
 import json
 from findbeat import findbeat
+from pandas.io.formats.style import Styler
+
 
 app = Flask(__name__)
 
@@ -23,12 +25,18 @@ def get_model():
         col_lst= pickle.load(fp)
     with open('sgr_df.pkl', 'rb') as sgr:
         sgr_df = pickle.load(sgr)
+    with open('coo', 'rb') as c:
+        coo = pickle.load(c)
         
     #print("hi")
-    return model, model1234, logr_cols, col_lst, sgr_df
+    return model, model1234, logr_cols, col_lst, sgr_df, coo
 
 
-model, model1234, logr_cols, col_lst, sgr_df = get_model()
+model, model1234, logr_cols, col_lst, sgr_df, coo = get_model()
+
+@app.route('/table', methods = ['GET'])
+def table():
+    return coo.style.render(index=False)
 
 @app.route('/', methods=['GET'])
 def home():
@@ -47,15 +55,15 @@ def solve():
     
     user_data = request.json
     #print(user_data)
-    address, ICT, race, gender, dayofweek, month, hour = user_data["Address"], user_data["ICT"], user_data["Race"], user_data["Gender"], user_data["dayofweek"], user_data["month"], user_data["hour"]
-    p = _probas(address, ICT, race, gender, dayofweek, month, hour)
+    address, ICT, race, gender, hour, dayofweek, month = user_data["Address"], user_data["ICT"], user_data["Race"], user_data["Gender"], user_data["Hour"], user_data["dayofweek"], user_data["month"]
+    p = _probas(address, ICT, race, gender, hour, dayofweek, month)
     
     return jsonify({'p0':p[0], 'p1':p[1],'p2':p[2],'p3':p[3],'p4':p[4]})
 
 
 
 
-def _probas(address, ICT, race, gender, dayofweek, month, hour):
+def _probas(address, ICT, race, gender,  hour, dayofweek, month):
     precinct, sector, beat = _get_beat(address)
     coshour, sinhour = _get_hours(hour)
     
@@ -122,6 +130,7 @@ def _get_precinct(beat):
 
 
 def _get_hours(hour):
+    hour = int(hour)
     hour2 = (hour/24)*2*np.pi
     sinhour = np.sin(hour2)
     coshour = np.cos(hour2)

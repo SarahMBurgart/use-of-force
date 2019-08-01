@@ -1,25 +1,24 @@
 
-let Address
-let ICT
-let Race 
-let Gender
+
 
 let get_input = function() {
-    Address = $("input#Address").val()
-    ICT = $("select#ICT").val()
-    Race = $("select#Race").val()
-    Gender = $("select#Gender").val()
+    let Address = $("input#Address").val()
+    let ICT = $("select#ICT").val()
+    let Race = $("select#Race").val()
+    let Gender = $("select#Gender").val()
+    let Hour = $("select#Hour").val()
     let d = new Date()
     let dayofweek = d.getDay()
     let month = d.getMonth()
-    let hour = d.getHours()
+ 
     return {'Address': Address,
             'ICT': ICT,
             'Race': Race,
             'Gender': Gender,
+            "Hour": Hour,
             "dayofweek": dayofweek,
             "month": month,
-            "hour": hour} 
+            } 
 };
 
 let send_inputs_json = function(coefficients) {
