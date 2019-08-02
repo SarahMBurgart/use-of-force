@@ -10,7 +10,6 @@ let get_input = function() {
     let d = new Date()
     let dayofweek = d.getDay()
     let month = d.getMonth()
- 
     return {'Address': Address,
             'ICT': ICT,
             'Race': Race,
