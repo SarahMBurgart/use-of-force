@@ -2,7 +2,7 @@
 
 A predictive model for probabilities of level of force when the Seattle Police respond to a call or onview concern.
 
-Models were made using Python and SQL on AWS servers, based on voluntary reporting data from the Seattle Police department and an online database of Police Reports.
+Models were made using Python and SQL on AWS servers, based on voluntary reporting data from the Seattle Police department.
 
 The website is currently hosted on an AWS EC2 instance at: [predictingforce.ml](https://predictingforce.ml)
 
