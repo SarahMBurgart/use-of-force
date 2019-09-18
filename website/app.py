@@ -40,7 +40,7 @@ def table():
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/visualizations', methods=['GET'])
 def visualizations():
