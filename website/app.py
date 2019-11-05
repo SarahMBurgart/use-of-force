@@ -156,7 +156,7 @@ if __name__ == '__main__':
 
     
 
-    app.run(host='0.0.0.0', port=8087, debug=True)
+    app.run(host='0.0.0.0', port=80)
 
     # (base) Sarahs-MacBook-Air-2:website sarahburgart$ export FLASK_ENV=development
  # (base) Sarahs-MacBook-Air-2:website sarahburgart$ flask run
