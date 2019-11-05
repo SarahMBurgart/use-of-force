@@ -40,9 +40,6 @@ console.log("hello")
         $(document).ready(function() {
 
 
-            $("#button2").click(function() {
-                send_thank_you()
-            })
 
             $("button#solve").click(function() {
                 
@@ -57,13 +54,13 @@ console.log("hello")
        
        
         } )
-let send_thank_you = function() {
-    email = $("#email").val()
-    console.log(email) 
+// let send_thank_you = function() {
+  //  email = $("#email").val()
+  //  console.log(email) 
 
-    $("#email").val("Thank you!");
+   // $("#email").val("Thank you!");
 
-    window.localStorage.setItem(email, email)
+  //  window.localStorage.setItem(email, email)
     // $.ajax({
     //     url: '/button-addon2',
     //     contentType: "application/json; charset=utf-8",
@@ -72,5 +69,5 @@ let send_thank_you = function() {
             
     //     },
     // }) 
-};
+;
 

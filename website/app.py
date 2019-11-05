@@ -1,17 +1,26 @@
 from flask import Flask, request, render_template, jsonify
+from flask_mail import Mail
+
+
 import pandas as pd
+from pandas.io.formats.style import Styler
 import numpy as np
 import dill as pickle
 from urllib.request import urlopen
 from urllib.parse import quote
 import json
-from findbeat import findbeat
-from pandas.io.formats.style import Styler
 
+from findbeat import findbeat
 
 app = Flask(__name__)
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'clearconnective@gmail.com'
+app.config['MAIL_PASSWORD'] = 'thisApple442'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 
-
+mail = Mail(app)
 
 def get_model():
      # add unpickled model
@@ -49,6 +58,8 @@ def visualizations():
 @app.route('/predictions', methods=['GET'])
 def predictions():
     return render_template('predictions.html')
+
+
 
 @app.route('/solve', methods=['POST'])
 def solve():

@@ -5,12 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}">  
-    </script>
-  
-
-    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}">  
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"> </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"> </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type=text/javascript> $(function() { $("#email_button").click(function () { $.getJSON('/send_email', { },
+    function() { }); return false; }); }); </script> 
 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900" rel="stylesheet">
@@ -257,25 +256,13 @@
         <div class="row">
           <div class="col-md-8">
             <div class="row">
-              <div class="col-md-10">
+              
                 <h2 class="footer-heading mb-4">About Me</h2>
                 <p>My background is in science, teaching, and communication. <br> <br>Current fascination: There is a *somewhat* surprising overlap between understanding the interplay of relationships of data and field system theory in Marine Science. Ditto with adult learning theory (andragogy) and child learning (pedagogy) and statistics (both Bayesian and Frequentist).</p>
-              </div> 
+              <p><a href="https://www.linkedin.com/in/sarahmburgart/">Sarah M Burgart LinkedIn</a></p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="mb-4">
-              <h2 class="footer-heading mb-4">COMING SOON --> Let's Connect - Enter Email Here: -- in the meantime, email me! sburgart@gmail.com --<s/h2>
-            <div class="footer-subscribe">
-              <div class="input-group mb-3">
-                <input type="email" id="email" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-primary text-black" type="button" id="button2">Email Me!</button>
-                </div>
-              </div>
-            </div>  
-            </div>
-          </div>
+          
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
